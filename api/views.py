@@ -4,13 +4,15 @@ from .serializers import ProdutoSerializer, VendedorSerializer, CarrinhoSerializ
 
 
 class VendedorViewSet(viewsets.ModelViewSet):
-    queryset= Vendedor.objects.all()
+    queryset = Vendedor.objects.all()
     serializer_class = VendedorSerializer
+
 
 class ProdutoViewSet(viewsets.ModelViewSet):
     queryset = Produto.objects.all()
     serializer_class = ProdutoSerializer
 
+
 class CarrinhoViewSet(viewsets.ModelViewSet):
-    queryset= Carrinho.objects.all()
+    queryset = Carrinho.objects.all()
     serializer_class = CarrinhoSerializer
