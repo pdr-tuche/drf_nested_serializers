@@ -24,8 +24,10 @@ class Cliente(models.Model):
 
 
 class Carrinho(models.Model):
-    vendedor = models.ForeignKey(Vendedor, on_delete=models.DO_NOTHING)
+    vendedor = models.ForeignKey(
+        Vendedor, related_name='carrinho', on_delete=models.DO_NOTHING)
     produtos = models.ManyToManyField(Produto, related_name='carrinho')
+    cliente = models.ForeignKey(Cliente, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return f'carrinho: {self.id}, vendedor: {self.vendedor}'
