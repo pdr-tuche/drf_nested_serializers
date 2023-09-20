@@ -1,6 +1,13 @@
 from rest_framework import serializers
 from .models import Produto, Vendedor, Carrinho, Cliente
 
+'''
+Vendas_carrinhoSerializer e uma gambi que utilizo na classe VendedorSerializer
+ela permite que eu transforme um queryset da classe Carrinho sem usar a classe serializadora
+da classe Carrinho que seria a classe CarrinhoSerializer. Ou seja,
+esta classe é especifica para o caso de buscar os carrinhos em que o vendedor esta relacionado.
+'''
+
 
 class Vendas_carrinhoSerializer(serializers.ModelSerializer):
     class Meta:
